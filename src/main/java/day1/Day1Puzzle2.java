@@ -1,0 +1,40 @@
+package day1;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Day1Puzzle2 {
+	public static void main(String[] args) throws IOException, URISyntaxException {
+		List<String> lines = Files.readAllLines(Paths.get(Day1Puzzle2.class.getResource("input.txt").toURI()));
+		List<Integer> depths = lines.stream().map(Integer::parseInt).collect(Collectors.toList());
+		List<Integer> sums = new LinkedList<>();
+		
+		for (int i = 0; i < depths.size(); i++) {
+			if (i + 2 >= depths.size()) {
+				break;
+			}
+			
+			int sum = depths.get(i) + depths.get(i+1) + depths.get(i+2);
+			sums.add(sum);
+		}
+		
+		int lastSum = sums.get(0);
+		int count = 0;
+		for (int sum : sums) {
+			if (sum > lastSum) {
+				count++;
+			}
+			lastSum = sum;
+		}
+		
+		System.out.println(count);
+	}
+
+	
+}
