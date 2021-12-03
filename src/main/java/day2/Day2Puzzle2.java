@@ -6,26 +6,24 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class Day1Puzzle1 {
+public class Day2Puzzle2 {
 	public static void main(String[] args) throws IOException, URISyntaxException {
-		List<String> lines = Files.readAllLines(Paths.get(Day1Puzzle1.class.getResource("input.txt").toURI()));
+		List<String> lines = Files.readAllLines(Paths.get(Day2Puzzle2.class.getResource("input.txt").toURI()));
 
 		int x = 0;
 		int d = 0;
-		int a = 0;
 		for (String line : lines)  {
 			String[] step = line.split(" ");
 			int v = Integer.parseInt(step[1]);
 			switch (step[0]) {
 			case "forward":
 				x += v;
-				d += v * a;
 				break;
 			case "up":
-				a -= v;
+				d -= v;
 				break;
 			case "down":
-				a += v;
+				d += v;
 				break;
 			}
 		}

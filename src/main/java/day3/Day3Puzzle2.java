@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Day1Puzzle2 {
+public class Day3Puzzle2 {
 	private static int countOnes(List<String> lines, int index) {
 		int count = 0;
 		for (String line : lines) {
@@ -22,7 +22,7 @@ public class Day1Puzzle2 {
 	}
 
 	public static void main(String[] args) throws IOException, URISyntaxException {
-		List<String> lines = Files.readAllLines(Paths.get(Day1Puzzle1.class.getResource("input.txt").toURI()));
+		List<String> lines = Files.readAllLines(Paths.get(Day3Puzzle1.class.getResource("input.txt").toURI()));
 
 		List<String> oxygenLines = new ArrayList<>(lines);
 		AtomicInteger index = new AtomicInteger(0);

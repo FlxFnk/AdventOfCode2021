@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Day1Puzzle1 {
+public class Day3Puzzle1 {
 	public static void main(String[] args) throws IOException, URISyntaxException {
-		List<String> lines = Files.readAllLines(Paths.get(Day1Puzzle1.class.getResource("input.txt").toURI()));
+		List<String> lines = Files.readAllLines(Paths.get(Day3Puzzle1.class.getResource("input.txt").toURI()));
 		
 		int ones[] = new int[lines.get(0).length()];
 		Arrays.fill(ones, 0);
